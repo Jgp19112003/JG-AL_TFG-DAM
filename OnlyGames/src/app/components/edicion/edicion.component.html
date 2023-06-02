@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mis Estadisticas</title>
+    <link href="https://fonts.cdnfonts.com/css/8bit-wonder" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+      </div>
+
+      <div class="card">
+        <div class="only_logo">
+          <img src=".\assets\images\onlygames.png" alt="" />
+        </div>
+        <div
+          class="container"
+          style="
+            margin-left: 15px;
+            width: fit-content;
+            height: fit-content;
+            position: absolute;
+          "
+        >
+          <div class="row"></div>
+          <div class="carta_info">
+            <div
+              style="
+                font-family: '8BIT WONDER', sans-serif;
+                color: white;
+                font-size: 16px;
+                display: inline-flex;
+              "
+            >
+              <img
+                src=".\assets\images\alien.png"
+                alt=""
+                style="width: 23px; height: 23px; margin-top: 20px"
+              />
+              <p
+                style="
+                  font-family: '8BIT WONDER', sans-serif;
+                  margin-left: 5px;
+                  margin-top: 8px;
+                "
+              >
+                Gametag:
+              </p>
+              <div style="display: inline-flex; margin-left: 60px">
+                <img
+                  (click)="habilitarEdicion()"
+                  src=".\assets\images\edit.png"
+                  style="
+                    width: 15px;
+                    height: 15px;
+                    margin-top: 23px;
+                    margin-right: 8px;
+                  "
+                />
+                <input
+                  [readonly]="!editando"
+                  type="text"
+                  id="input"
+                  value="{{ currentUserGameTag }}"
+                  style="
+                    font-family: '8BIT WONDER', sans-serif;
+                    width: 175px;
+                    margin-top: 8px;
+                    margin-right: 10px;
+                  "
+                  #miInput
+                  (click)="habilitarEdicion()"
+                />
+              </div>
+              <div
+                type="submit"
+                class="btn btn-primary"
+                style="
+                  border-color: transparent;
+                  color: white;
+                  background-color: rgb(23, 27, 44);
+                  font-family: '8BIT WONDER', sans-serif;
+                  font-size: 12px;
+                  position: relative;
+                  text-align: center;
+                  margin-top: 15px;
+                  height: fit-content;
+                "
+                (click)="cambiarGameTag(miInput.value)"
+              >
+                Editar
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="alert alert"
+      role="alert"
+      style="
+        font-family: '8BIT WONDER', sans-serif;
+        font-size: smaller;
+        color: white;
+        width: 500px;
+        text-align: center;
+        margin-left: 710px;
+        margin-top: 10px;
+        background-color: {{ color }};
+      "
+      *ngIf="mostrar"
+    >
+      {{ mensaje }}
+    </div>
+  </body>
+</html>

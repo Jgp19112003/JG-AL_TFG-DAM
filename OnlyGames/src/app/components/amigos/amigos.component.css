@@ -1,0 +1,136 @@
+#fb {
+  width: 400px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  position: relative;
+  height: 100px;
+  background-color: rgb(228, 233, 216);
+}
+
+#fb p {
+  font-family: sans-serif;
+  margin: 0 0 0 10px;
+  line-height: 30px;
+}
+
+#fb-top span {
+  float: right;
+  margin-right: 10px;
+}
+#fb-top {
+  background-color: #e4a7fc;
+  height: 30px;
+  width: 400px;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  top: -1px;
+  left: -1px;
+  border: 1px solid gray;
+}
+
+#fb img {
+  position: absolute;
+  left: 10px;
+  top: 28px;
+}
+
+#info {
+  position: absolute;
+  top: 38px;
+  line-height: 25px;
+}
+
+#info span {
+  color: #777;
+  font-size: 14px;
+}
+
+#button-block {
+  position: absolute;
+  right: 10px;
+  top: 55px;
+}
+
+#button-block div {
+  display: inline-block;
+}
+
+#aceptar,
+#eliminar {
+  background-color: #519c05;
+  color: white;
+  padding: 7px;
+  border-radius: 2px;
+  margin-right: 10px;
+  font-family: sans-serif;
+}
+
+#eliminar {
+  color: white;
+  background-color: #ca1c2a;
+  border: 1px solid #d11a2a;
+  padding: 6px;
+  margin-right: 0;
+}
+
+#verEstadisticas {
+  color: white;
+  border-radius: 2px;
+  background-color: #163e54;
+  border: 1px solid #163e54;
+  padding: 6px;
+  margin-right: 0;
+}
+
+#button-block div:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.container {
+  padding: 0;
+  margin: 0;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  left: 38%;
+  top: 30%;
+}
+
+.card {
+  width: 480px;
+  height: 330px;
+  border: 2px solid rgba(94, 143, 216, 0.2);
+  background: rgba(40, 54, 255, 0.411);
+  border-radius: 10px;
+  z-index: 1;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  position: relative;
+}
+
+.only_logo {
+  margin-left: 90px;
+}
+
+.only_logo img {
+  width: 300px;
+  height: 60px;
+}
+.carta_info img {
+  width: 70px;
+  height: 70px;
+}
+
+.carta_info p {
+  color: #ffffff;
+  display: flex;
+  font-size: 12px;
+}
+.lista {
+  float: right;
+}

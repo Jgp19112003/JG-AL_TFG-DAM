@@ -1,0 +1,245 @@
+<div *ngIf="mostrar">
+  <div
+    class="alert alert"
+    role="alert"
+    style="
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: '8BIT WONDER', sans-serif;
+      font-size: smaller;
+      color: black;
+      top: 50%;
+      left: 35%;
+    "
+  >
+    Todavia no tienes amigos, sal a la calle campeon.
+  </div>
+</div>
+
+<div class="container" style="visibility: {{ mostrarcarta }}">
+  <div class="circles">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+  </div>
+  <div class="card">
+    <img
+      src=".\assets\images\close.png"
+      style="width: 24px; position: absolute"
+      alt=""
+      (click)="ocultarCarta()"
+    />
+    <div class="only_logo">
+      <img src=".\assets\images\onlygames.png" alt="" />
+    </div>
+    <div class="container" style="left: 30px; margin-top: 30px">
+      <div class="row"></div>
+      <div class="carta_info">
+        <div
+          class="col"
+          style="
+            font-family: '8BIT WONDER', sans-serif;
+            color: white;
+            margin-right: 20px;
+          "
+        >
+          <img src=".\assets\images\alien.png" alt="" />
+          <p style="font-family: '8BIT WONDER', sans-serif">
+            TagName: {{ usuario_amigo?.gametag }}
+          </p>
+          <p style="font-family: '8BIT WONDER', sans-serif">
+            Monedas: {{ usuario_amigo?.coins
+            }}<img
+              src=".\assets\images\coin.png"
+              style="width: 18px; height: 18px; margin-left: 2px"
+            />
+          </p>
+        </div>
+      </div>
+      <div
+        class="col"
+        style="
+          font-family: '8BIT WONDER', sans-serif;
+          color: white;
+          font-size: 14px;
+        "
+      >
+        <p
+          style="
+            font-family: '8BIT WONDER', sans-serif;
+            margin-bottom: 10px;
+            margin-top: 15px;
+            margin-left: 35px;
+          "
+        >
+          Highest Scores
+        </p>
+        <ul style="margin-left: 5px; list-style-type: none">
+          <li
+            style="
+              font-family: '8BIT WONDER', sans-serif;
+              font-size: 12px;
+              margin-bottom: 5px;
+            "
+          >
+            Flappy Bird: {{ records_amigo[2] }}
+          </li>
+          <li
+            style="
+              font-family: '8BIT WONDER', sans-serif;
+              font-size: 12px;
+              margin-bottom: 5px;
+            "
+          >
+            Snake: {{ records_amigo[3] }}
+          </li>
+          <li
+            style="
+              font-family: '8BIT WONDER', sans-serif;
+              font-size: 12px;
+              margin-bottom: 5px;
+            "
+          >
+            Breakout: {{ records_amigo[0] }}
+          </li>
+          <li
+            style="
+              font-family: '8BIT WONDER', sans-serif;
+              font-size: 12px;
+              margin-bottom: 5px;
+            "
+          >
+            BubbleShoot: {{ records_amigo[1] }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" style="margin-top: 100px; width: 95%">
+  <div class="col" style="text-align: center">
+    <p style="font-family: '8BIT WONDER', sans-serif">Mis Solicitudes</p>
+    <div
+      id="fb"
+      *ngFor="let item of solicitudes"
+      style="margin-top: 40px; left: 28%"
+    >
+      <div id="fb-top">
+        <p style="font-family: '8BIT WONDER', sans-serif; font-size: 10px">
+          Solicitudes de amistad
+        </p>
+      </div>
+      <p
+        id="info"
+        style="font-family: '8BIT WONDER', sans-serif; font-size: 15px"
+      >
+        {{ item }}
+      </p>
+      <div id="button-block">
+        <div
+          id="aceptar"
+          style="font-family: '8BIT WONDER', sans-serif; font-size: 8px"
+          (click)="aceptarSolicitud(item)"
+        >
+          Aceptar
+        </div>
+        <div
+          id="eliminar"
+          style="font-family: '8BIT WONDER', sans-serif; font-size: 8px"
+          (click)="eliminarSolicitud(item)"
+        >
+          Eliminar
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col" style="align-items: center; text-align: center">
+    <form>
+      <p style="font-family: '8BIT WONDER', sans-serif">Agregar amigo</p>
+      <div
+        class="form-group"
+        style="width: fit-content; margin-left: 188px; display: flex"
+      >
+        <input
+          type="text"
+          style="width: fit-content"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="GameTag de usuario"
+          #gametagAmigo
+        />
+        <div
+          type="submit"
+          class="btn btn-primary"
+          style="
+            border-color: transparent;
+            background-color: rgb(211, 54, 250);
+            font-family: '8BIT WONDER', sans-serif;
+            font-size: 12px;
+            margin-left: 5px;
+            position: relative;
+            text-align: center;
+            margin-top: 5px;
+            height: fit-content;
+          "
+          (click)="enviarSolicitud(gametagAmigo.value)"
+        >
+          Enviar
+        </div>
+      </div>
+    </form>
+    <div *ngIf="success">
+      <div
+        class="alert alert"
+        role="alert"
+        style="
+        position: absolute;
+          font-family: '8BIT WONDER', sans-serif;
+          font-size: smaller;
+          color: white; width: 350px;
+          text-align: center;
+          margin-top: 10px;
+          left: 40%;
+          background-color: {{ colorAlert }};
+          font-size: 10px;
+        "
+      >
+        {{ mensaje }}
+      </div>
+    </div>
+  </div>
+  <div class="col" style="align-items: center; text-align: center">
+    <p style="font-family: '8BIT WONDER', sans-serif">Mis Amigos</p>
+    <div
+      id="fb"
+      *ngFor="let item of amigos"
+      style="margin-top: 35px; left: 28%"
+    >
+      <img id="fb img" src=".\assets\images\alien.png" style="width: 50px" />
+      <p
+        id="infoamigo"
+        style="
+          font-family: '8BIT WONDER', sans-serif;
+          font-size: 15px;
+          margin-top: 38px;
+          position: absolute;
+          margin-left: 80px;
+        "
+      >
+        {{ item }}
+      </p>
+      <div id="button-block">
+        <div
+          id="verEstadisticas"
+          style="font-family: '8BIT WONDER', sans-serif; font-size: 8px"
+          (click)="verEstadisticas(item)"
+        >
+          Ver estadisticas
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
