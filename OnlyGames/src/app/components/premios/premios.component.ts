@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
-import { DatabaseService } from 'src/app/services/database.service';
-import { Usuario } from 'src/app/utils/Usuario';
+import { AuthService } from '../../services/auth.service';
+import { DatabaseService } from '../../services/database.service';
+import { Usuario } from '../../utils/Usuario';
 
 @Component({
   selector: 'app-premios',

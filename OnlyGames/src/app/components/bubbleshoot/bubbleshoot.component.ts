@@ -1,8 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
-import { CargarScriptsService } from 'src/app/services/cargar-scripts.service';
-import { DatabaseService } from 'src/app/services/database.service';
-import { AuthService } from 'src/app/services/auth.service';
-import { Usuario } from 'src/app/utils/Usuario';
+import { CargarScriptsService } from '../../services/cargar-scripts.service';
+import { DatabaseService } from '../../services/database.service';
+import { AuthService } from '../../services/auth.service';
+import { Usuario } from '../../utils/Usuario';
 import { Router } from '@angular/router';
 
 @Component({

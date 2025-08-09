@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { CargarScriptsService } from 'src/app/services/cargar-scripts.service';
-import { DatabaseService } from 'src/app/services/database.service';
+import { CargarScriptsService } from '../../services/cargar-scripts.service';
+import { DatabaseService } from '../../services/database.service';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { Usuario } from '../../utils/Usuario';

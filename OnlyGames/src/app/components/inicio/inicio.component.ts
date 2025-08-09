@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
-import { DatabaseService } from 'src/app/services/database.service';
+import { AuthService } from '../../services/auth.service';
+import { DatabaseService } from '../../services/database.service';
 import { ActivatedRoute } from '@angular/router';
 import { sendEmailVerification } from 'firebase/auth';
 
